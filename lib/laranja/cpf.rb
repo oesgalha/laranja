@@ -18,7 +18,7 @@ module Laranja
     private
 
     def self.uf_code(uf)
-      static_data['cpf']['codigo_uf'][uf.to_s.downcase].to_s
+      data('codigo_uf')[uf.to_s.downcase].to_s
     end
   end
 end

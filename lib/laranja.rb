@@ -1,12 +1,27 @@
 module Laranja
   class Base
 
+    def self.specified(format)
+      format.gsub(/%([^%\s\z]+)/) { data_sample($1) }
+    end
+
     protected
 
+    def self.data_sample(key)
+      data(key).sample
+    end
+
+    def self.data(key)
+      static_data[to_s.split('::')[-1].downcase][key]
+    end
+
+    private
+
     def self.static_data
-      @static_data ||= YAML.load_file(File.join(File.expand_path(File.dirname(__FILE__)), 'laranja', 'static_data.yml'))['laranja']
+      @static_data ||= YAML.load_file(File.join(File.expand_path(File.dirname(__FILE__)), 'static_data.yml'))['laranja']
     end
   end
 end
 
 require 'laranja/cpf'
+require 'laranja/name'

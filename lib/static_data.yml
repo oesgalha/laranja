@@ -1,0 +1,7 @@
+laranja:
+  name:
+    first_name: ['Alessandro', 'Alessandra', 'Alexandre', 'Aline', 'Antônio', 'Breno', 'Bruna', 'Carlos', 'Carla', 'Célia', 'Cecília', 'César', 'Danilo', 'Dalila', 'Deneval', 'Eduardo', 'Eduarda', 'Esther', 'Elísio', 'Fábio', 'Fabrício', 'Fabrícia', 'Félix', 'Felícia', 'Feliciano', 'Frederico', 'Fabiano', 'Gustavo', 'Guilherme', 'Gúbio', 'Heitor', 'Hélio', 'Hugo', 'Isabel', 'Isabela', 'Ígor', 'João', 'Joana', 'Júlio César', 'Júlio', 'Júlia', 'Janaína', 'Karla', 'Kléber', 'Lucas', 'Lorena', 'Lorraine', 'Larissa', 'Ladislau', 'Marcos', 'Meire', 'Marcelo', 'Marcela', 'Margarida', 'Mércia', 'Márcia', 'Marli', 'Morgana', 'Maria', 'Norberto', 'Natália', 'Nataniel', 'Núbia', 'Ofélia', 'Paulo', 'Paula', 'Pablo', 'Pedro', 'Raul', 'Rafael', 'Rafaela', 'Ricardo', 'Roberto', 'Roberta', 'Sílvia', 'Sílvia', 'Silas', 'Suélen', 'Sara', 'Salvador', 'Sirineu', 'Talita', 'Tertuliano', 'Vicente', 'Víctor', 'Vitória', 'Yango', 'Yago', 'Yuri', 'Washington', 'Warley']
+    last_name: ['Albuquerque', 'Barros', 'Batista', 'Braga', 'Costa', 'Carvalho', 'Franco', 'Macedo', 'Martins', 'Melo', 'Moraes', 'Moreira', 'Nogueira', 'Oliveira', 'Pereira', 'Reis', 'Santos', 'Saraiva', 'Silva', 'Souza', 'Xavier']
+    suffix: ['Junior', 'Neto', 'Filho']
+  cpf:
+    codigo_uf: { ac: 2, al: 4, ap: 2, am: 2, ba: 5, ce: 3, df: 1, es: 7, go: 1, ma: 3, mt: 1, ms: 1, mg: 6, pa: 2, pb: 4, pr: 9, pe: 4, pi: 3, rj: 7, rn: 4, rs: 0, ro: 2, rr: 2, sc: 9, sp: 8, se: 5, to: 1 }
