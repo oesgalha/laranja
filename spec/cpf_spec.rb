@@ -2,15 +2,15 @@ require 'spec_helper'
 
 shared_examples 'a cpf generator' do |cpf|
   describe 'and' do
-    it 'should return a string' do
+    it 'return a string' do
       expect(cpf).to be_a_kind_of(String)
     end
 
-    it 'should return a string with 11 characters' do
+    it 'return a string with 11 characters' do
       expect(cpf.size).to eq(11)
     end
 
-    it 'should return a valid cpf' do
+    it 'return a valid cpf' do
       v1, v2 = 0, 0
       for i in 0..8
         v1 += cpf[i].to_i * (10 - i)
@@ -50,6 +50,13 @@ describe Laranja::CPF do
       expect(Laranja::CPF.cpf('rj')[-3].to_i).to eq(7)
       expect(Laranja::CPF.cpf('RS')[-3].to_i).to eq(0)
       expect(Laranja::CPF.cpf(:sp)[-3].to_i).to eq(8)
+    end
+  end
+
+  describe '#formatted' do
+    it_behaves_like 'a cpf generator', Laranja::CPF.formatted.gsub(/[\d^]+/, '')
+    it 'return a formatted cpf string' do
+      expect(Laranja::CPF.formatted).to match(/\d{3}\.\d{3}\.\d{3}-\d{2}/)
     end
   end
 end

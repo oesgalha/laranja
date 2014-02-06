@@ -10,7 +10,10 @@ module Laranja
       cpf += v.join
     end
 
-    self.singleton_class.send(:alias_method, :number_only, :cpf)
+    def self.formatted(uf = nil)
+      c = cpf
+      '%03d.%03d.%03d-%02d' % [ c[0..2], c[3..5], c[6..8], c[9..10] ]
+    end
 
     private
 
