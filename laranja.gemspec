@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = Laranja::VERSION
   spec.authors       = ['Oscar Esgalha']
   spec.email         = ['oscaresgalha@gmail.com\n']
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.description   = %q{Grab some valid brazilian fake data. For testing.}
+  spec.summary       = %q{Laranja will generate valid brazilian fake data, which can be used for automated testing or populating development databases.}
+  spec.homepage      = ''
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
