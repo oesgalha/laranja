@@ -12,7 +12,7 @@ module Laranja
 
     def self.formatted(uf = nil)
       c = cpf
-      '%03d.%03d.%03d-%02d' % [ c[0..2], c[3..5], c[6..8], c[9..10] ]
+      '%03d.%03d.%03d-%02d' % [ c[0..2].to_i, c[3..5].to_i, c[6..8].to_i, c[9..10].to_i ]
     end
 
     private

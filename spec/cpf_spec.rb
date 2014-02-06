@@ -54,7 +54,7 @@ describe Laranja::CPF do
   end
 
   describe '#formatted' do
-    it_behaves_like 'a cpf generator', Laranja::CPF.formatted.gsub(/[\d^]+/, '')
+    it_behaves_like 'a cpf generator', Laranja::CPF.formatted.gsub(/\D+/, '')
     it 'return a formatted cpf string' do
       expect(Laranja::CPF.formatted).to match(/\d{3}\.\d{3}\.\d{3}-\d{2}/)
     end
