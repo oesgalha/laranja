@@ -56,4 +56,22 @@ describe Laranja::Internet do
       expect(Laranja::Internet.strfusername(name, ['-'])).to eq('john-doe')
     end
   end
+
+  describe '#password' do
+    it 'returns a string' do
+      expect(Laranja::Internet.password).to be_a_kind_of(String)
+    end
+
+    it 'returns an alphanumeric string' do
+      expect(Laranja::Internet.password).not_to match(/\W/)
+    end
+
+    it 'returns a password with minimum length' do
+      expect(Laranja::Internet.password(32).size).to be >= 32
+    end
+
+    it 'returns a password with minimum and maximum length' do
+      expect(Laranja::Internet.password(64, 64).size).to eq(64)
+    end
+  end
 end
