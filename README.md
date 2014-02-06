@@ -1,4 +1,4 @@
-# Laranja
+# Laranja [![Build Status](https://travis-ci.org/oesgalha/laranja.png)](https://travis-ci.org/oesgalha/laranja)
 
 TODO: Write a gem description
 
