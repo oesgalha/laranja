@@ -79,10 +79,13 @@ Laranja::Internet.password                          # Pq9vD8VJzttr6vrB77hDCp2LVK
 Laranja::Internet.password(2, 6)                    # COW => Password with a random number of charaters between 2 and 6 (the default is 8 and 128)
 ```
 
-## Contributing
+## Roadmap
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+- Jobs
+- Gender
+- Addresses
+- Phones
+- Dates
+- RG
+- Credit Cards
+- Bank Accounts
