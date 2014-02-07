@@ -44,17 +44,37 @@ Laranja::Name.strfname(1, true, false)    # Albuquerque Neto => Name with 1 surn
 ```ruby
 require 'laranja'
 
-Laranja::CPF                              # 23379020648
+Laranja::CPF                    # 23379020648
 
-Laranja::CPF.formatted                    # 524.966.867-49
+Laranja::CPF.formatted          # 524.966.867-49
 
-Laranja::CPF.cpf(:rj)                     # 29564858739 => Random CPF from Rio de Janeiro
+Laranja::CPF.cpf(:rj)           # 29564858739 => Random CPF from Rio de Janeiro
 
-Laranja::CPF.formatted(:BA)               # 101.182.995-90 => Random CPF from Bahia
+Laranja::CPF.formatted(:BA)     # 101.182.995-90 => Random CPF from Bahia
 
-Laranja::CPF.cpf('RS')                    # 73272882014 => Random CPF from Rio Grande do Sul
+Laranja::CPF.cpf('RS')          # 73272882014 => Random CPF from Rio Grande do Sul
 
-Laranja::CPF.cpf('sp')                    # 07537191859 => Random CPF from São Paulo
+Laranja::CPF.cpf('sp')          # 07537191859 => Random CPF from São Paulo
+```
+
+### Internet
+
+```ruby
+require 'laranja'
+
+Laranja::Internet.email                             # elsionogueira@gmail.com
+
+Laranja::Internet.strfemail('Vitória Pereira')      # vitria.pereira@yahoo.com
+
+Laranja::Internet.username                          # marli.macedo
+
+Laranja::Internet.strfusername('Ana Machado')       # anamachado
+
+Laranja::Internet.strfusername('Joel Melo', ['-'])  # joel-melo => Username with one of the specified separators ( - )
+
+Laranja::Internet.password                          # Pq9vD8VJzttr6vrB77hDCp2LVK8iSm1iUjezQuS9dlah0EUukfQDPLf5ad0e6WwsrI39
+
+Laranja::Internet.password(2, 6)                    # COW => Password with a random number of charaters between 2 and 6 (the default is 8 and 128)
 ```
 
 ## Contributing

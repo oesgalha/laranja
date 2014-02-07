@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['oscaresgalha@gmail.com\n']
   spec.description   = %q{Grab some valid brazilian fake data. For testing.}
   spec.summary       = %q{Laranja will generate valid brazilian fake data, which can be used for automated testing or populating development databases.}
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/oesgalha/laranja'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
