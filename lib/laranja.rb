@@ -26,6 +26,8 @@ module Laranja
   end
 end
 
+require 'laranja/address'
 require 'laranja/cpf'
 require 'laranja/internet'
 require 'laranja/name'
+require 'laranja/version'
