@@ -1,5 +1,7 @@
 # Laranja
 [![Build Status](https://travis-ci.org/oesgalha/laranja.png)](https://travis-ci.org/oesgalha/laranja)
+[![Code Climate](https://codeclimate.com/github/oesgalha/laranja.png)](https://codeclimate.com/github/oesgalha/laranja)
+[![Coverage Status](https://coveralls.io/repos/oesgalha/laranja/badge.png)](https://coveralls.io/r/oesgalha/laranja)
 
 Laranja is a ruby gem which generates random fake valid data.
 It aims to help testing brazilian applications, since it generates specific data from the country.
