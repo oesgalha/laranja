@@ -81,10 +81,19 @@ Laranja::Internet.password                          # Pq9vD8VJzttr6vrB77hDCp2LVK
 Laranja::Internet.password(2, 6)                    # COW => Password with a random number of charaters between 2 and 6 (the default is 8 and 128)
 ```
 
+### Gender
+
+```ruby
+require 'laranja'
+
+Laranja::Gender.gender      # Feminino
+
+Laranja::Gender.abbr        # M
+```
+
 ## Roadmap
 
 - Jobs
-- Gender
 - Addresses
 - Phones
 - Dates
