@@ -2,11 +2,11 @@ module Laranja
   class Gender < Base
 
     def self.gender
-      specified '%name'
+      strf '%name'
     end
 
     def self.abbr
-      specified '%abbr'
+      strf '%abbr'
     end
   end
 end

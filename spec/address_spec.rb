@@ -64,11 +64,4 @@ describe Laranja::Address do
       expect(Laranja::Address.cep(:sp)[0].to_i).to eq(1)
     end
   end
-
-  describe '#strfcep' do
-    it 'returns a cep without suffix if specified' do
-      expect(Laranja::Address.strfcep(true, false)).to match(/\d{5}-000/)
-      expect(Laranja::Address.strfcep(false, false)).to match(/\d{5}000/)
-    end
-  end
 end

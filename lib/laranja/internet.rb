@@ -1,20 +1,20 @@
 module Laranja
   class Internet < Base
 
-    def self.strfemail(name)
-      specified strfusername(name) + '@%email'
+    def self.email_for(name)
+      strf username_for(name) + '@%email'
     end
 
     def self.email
-      strfemail(Laranja::Name.name)
+      email_for(Laranja::Name.name)
     end
 
-    def self.strfusername(name, sep = ['', '.', '_'])
+    def self.username_for(name, sep = ['', '.', '_'])
       name.gsub(/[^a-zA-Z0-9\s]/, '').split.join(sep.sample).downcase
     end
 
     def self.username
-      strfusername(Laranja::Name.name)
+      username_for(Laranja::Name.name)
     end
 
     def self.password(min = 8, max = 128)

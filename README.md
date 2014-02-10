@@ -28,17 +28,19 @@ Or install it yourself as:
 ```ruby
 require 'laranja'
 
-Laranja::Name.name                        # Vitória Pereira
+Laranja::Name.name                                  # Vitória Pereira
 
-Laranja::Name.name(2)                     # Ígor Braga Santos => Name with 2 surnames
+Laranja::Name.name(2)                               # Ígor Braga Santos => Name with 2 surnames
 
-Laranja::Name.first_name                  # Raul
+Laranja::Name.first_name                            # Raul
 
-Laranja::Name.last_name                   # Moreira
+Laranja::Name.last_name                             # Moreira
 
-Laranja::Name.strfname('M', 3, true, true)     # Fabrício Santos Costa Reis Junior => Male name with 3 surnames, suffix and first name
+Laranja::Name.strf '%male_first_name %last_name %last_name %last_name %male_suffix' # Fabrício Santos Costa Reis Junior
 
-Laranja::Name.strfname('m', 1, true, false)    # Albuquerque Neto => Male name with 1 surname, suffix but without first name
+Laranja::Name.strf '%last_name %male_suffix'        # Albuquerque Neto
+
+Laranja::Name.strf '%title %female_first_name %last_name' # Condessa Ofélia Macedo
 ```
 
 ### CPF
@@ -66,13 +68,13 @@ require 'laranja'
 
 Laranja::Internet.email                             # elsionogueira@gmail.com
 
-Laranja::Internet.strfemail('Vitória Pereira')      # vitria.pereira@yahoo.com
+Laranja::Internet.email_for('Vitória Pereira')      # vitria.pereira@yahoo.com
 
 Laranja::Internet.username                          # marli.macedo
 
-Laranja::Internet.strfusername('Ana Machado')       # anamachado
+Laranja::Internet.username_for('Ana Machado')       # anamachado
 
-Laranja::Internet.strfusername('Joel Melo', ['-'])  # joel-melo => Username with one of the specified separators ( - )
+Laranja::Internet.username_for('Joel Melo', ['-'])  # joel-melo => Username with one of the specified separators ( - )
 
 Laranja::Internet.password                          # Pq9vD8VJzttr6vrB77hDCp2LVK8iSm1iUjezQuS9dlah0EUukfQDPLf5ad0e6WwsrI39
 

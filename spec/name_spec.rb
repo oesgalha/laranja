@@ -39,27 +39,28 @@ describe Laranja::Name do
     it_behaves_like 'a name generator', Laranja::Name.last_name
   end
 
-  describe '#strfname' do
+  describe '#strf' do
 
     let(:n) { 1 + rand(3) }
 
-    it_behaves_like 'a name generator', Laranja::Name.strfname('f', 0)
-    it_behaves_like 'a name generator', Laranja::Name.strfname('F', 1, false, false)
-    it_behaves_like 'a name generator', Laranja::Name.strfname('m', 0)
-    it_behaves_like 'a name generator', Laranja::Name.strfname('M', 1, false, false)
-    it_behaves_like 'a name generator', Laranja::Name.strfname('m', 0, true, false)
+    it_behaves_like 'a name generator', Laranja::Name.strf('%female_first_name')
+    it_behaves_like 'a name generator', Laranja::Name.strf('%male_first_name')
+    it_behaves_like 'a name generator', Laranja::Name.strf('%last_name')
+    it_behaves_like 'a name generator', Laranja::Name.strf('%male_suffix')
+    it_behaves_like 'a name generator', Laranja::Name.strf('%female_title')
+    it_behaves_like 'a name generator', Laranja::Name.strf('%male_title')
 
     it 'returns N last names when specified' do
-      expect(Laranja::Name.strfname('f', n).split.size).to eq(n + 1)
-      expect(Laranja::Name.strfname('M', n).split.size).to eq(n + 1)
+      expect(Laranja::Name.strf("%male_first_name#{ ' %last_name' * n }").split.size).to eq(n + 1)
+      expect(Laranja::Name.strf("%female_first_name#{ ' %last_name' * n }").split.size).to eq(n + 1)
     end
 
     it 'returns N last names plus suffix when specified' do
-      expect(Laranja::Name.strfname('m', n, true).split.size).to eq(n + 2)
+      expect(Laranja::Name.strf("%male_first_name#{ ' %last_name' * n } %male_suffix").split.size).to eq(n + 2)
     end
 
     it 'returns a title when specified' do
-      expect(Laranja::Name::strfname('M', n, false, false, true).split.size).to eq(n + 1)
+      expect(Laranja::Name.strf("%female_title %female_first_name#{ ' %last_name' * n }").split.size).to eq(n + 2)
     end
   end
 end

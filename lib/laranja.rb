@@ -4,7 +4,7 @@ SafeYAML::OPTIONS[:default_mode] = :safe
 module Laranja
   class Base
 
-    def self.specified(format)
+    def self.strf(format)
       format.gsub(/%([^%\s\z]+)/) { data_sample($1) }
     end
 

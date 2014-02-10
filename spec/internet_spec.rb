@@ -16,16 +16,16 @@ describe Laranja::Internet do
     let (:name) { 'John Doe' }
 
     it 'returns a string' do
-      expect(Laranja::Internet.strfemail(name)).to be_a_kind_of(String)
+      expect(Laranja::Internet.email_for(name)).to be_a_kind_of(String)
     end
 
     it 'returns a valid email' do
-      expect(Laranja::Internet.strfemail(name)).to match(/^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i)
+      expect(Laranja::Internet.email_for(name)).to match(/^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i)
     end
 
     it 'returns an email for the given name' do
-      expect(Laranja::Internet.strfemail(name)).to include('john')
-      expect(Laranja::Internet.strfemail(name)).to include('doe')
+      expect(Laranja::Internet.email_for(name)).to include('john')
+      expect(Laranja::Internet.email_for(name)).to include('doe')
     end
   end
 
@@ -44,16 +44,16 @@ describe Laranja::Internet do
     let (:name) { 'John Doe' }
 
     it 'returns a string' do
-      expect(Laranja::Internet.strfusername(name)).to be_a_kind_of(String)
+      expect(Laranja::Internet.username_for(name)).to be_a_kind_of(String)
     end
 
     it 'returns an username for the given name' do
-      expect(Laranja::Internet.strfusername(name)).to include('john')
-      expect(Laranja::Internet.strfusername(name)).to include('doe')
+      expect(Laranja::Internet.username_for(name)).to include('john')
+      expect(Laranja::Internet.username_for(name)).to include('doe')
     end
 
     it 'returns an username for the given name and separator' do
-      expect(Laranja::Internet.strfusername(name, ['-'])).to eq('john-doe')
+      expect(Laranja::Internet.username_for(name, ['-'])).to eq('john-doe')
     end
   end
 
