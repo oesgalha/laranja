@@ -5,17 +5,17 @@ module Laranja
   class Base
 
     def self.strf(format)
-      format.gsub(/%([^%\s\z]+)/) { data_sample($1) }
+      format.gsub(/(:(?<scope>[^:\s\z]+))?%(?<key>[^%\s\z]+)/) { data_sample($~[:key], $~[:scope]) }
     end
 
     protected
 
-    def self.data_sample(key)
-      data(key).sample
+    def self.data_sample(key, scope = nil)
+      data(key, scope).sample
     end
 
-    def self.data(key)
-      static_data[to_s.split('::')[-1].downcase][key]
+    def self.data(key, scope = nil)
+      static_data[scope || to_s.split('::')[-1].downcase][key]
     end
 
     private
