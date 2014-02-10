@@ -91,10 +91,37 @@ Laranja::Gender.gender      # Feminino
 Laranja::Gender.abbr        # M
 ```
 
+### Address
+
+```ruby
+require 'laranja'
+
+Laranja::Address.city                 # Santo Rafael do Sul
+
+Laranja::Address.district             # Parque Condessa Carvalho
+
+Laranja::Address.street               # Avenida Barão Norberto Martins Neto
+
+Laranja::Address.secondary            # Lote 937
+
+Laranja::Address.number               # 608
+
+Laranja::Address.formatted_cep        # 43519-000
+
+Laranja::Address.cep                  # 49738343
+
+Laranja::Address.cep('SP')            # 13663282
+
+Laranja::Address.formatted_cep(:am)   # 64787-398
+
+Laranja::Address.uf                   # Rondônia
+
+Laranja::Address.uf_abbr              # MG
+```
+
 ## Roadmap
 
 - Jobs
-- Addresses
 - Phones
 - Dates
 - RG
