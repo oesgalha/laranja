@@ -28,6 +28,7 @@ end
 
 require 'laranja/address'
 require 'laranja/cpf'
+require 'laranja/gender'
 require 'laranja/internet'
 require 'laranja/name'
 require 'laranja/version'

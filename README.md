@@ -36,9 +36,9 @@ Laranja::Name.first_name                  # Raul
 
 Laranja::Name.last_name                   # Moreira
 
-Laranja::Name.strfname(3, true, true)     # Fabrício Santos Costa Reis Junior => Name with 3 surnames, suffix and first name
+Laranja::Name.strfname('M', 3, true, true)     # Fabrício Santos Costa Reis Junior => Male name with 3 surnames, suffix and first name
 
-Laranja::Name.strfname(1, true, false)    # Albuquerque Neto => Name with 1 surname, suffix but without first name
+Laranja::Name.strfname('m', 1, true, false)    # Albuquerque Neto => Male name with 1 surname, suffix but without first name
 ```
 
 ### CPF

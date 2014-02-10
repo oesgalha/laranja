@@ -43,16 +43,23 @@ describe Laranja::Name do
 
     let(:n) { 1 + rand(3) }
 
-    it_behaves_like 'a name generator', Laranja::Name.strfname(0)
-    it_behaves_like 'a name generator', Laranja::Name.strfname(1, false, false)
-    it_behaves_like 'a name generator', Laranja::Name.strfname(0, true, false)
+    it_behaves_like 'a name generator', Laranja::Name.strfname('f', 0)
+    it_behaves_like 'a name generator', Laranja::Name.strfname('F', 1, false, false)
+    it_behaves_like 'a name generator', Laranja::Name.strfname('m', 0)
+    it_behaves_like 'a name generator', Laranja::Name.strfname('M', 1, false, false)
+    it_behaves_like 'a name generator', Laranja::Name.strfname('m', 0, true, false)
 
     it 'returns N last names when specified' do
-      expect(Laranja::Name.strfname(n).split.size).to eq(n + 1)
+      expect(Laranja::Name.strfname('f', n).split.size).to eq(n + 1)
+      expect(Laranja::Name.strfname('M', n).split.size).to eq(n + 1)
     end
 
     it 'returns N last names plus suffix when specified' do
-      expect(Laranja::Name.strfname(n, true).split.size).to eq(n + 2)
+      expect(Laranja::Name.strfname('m', n, true).split.size).to eq(n + 2)
+    end
+
+    it 'returns a title when specified' do
+      expect(Laranja::Name::strfname('M', n, false, false, true).split.size).to eq(n + 1)
     end
   end
 end
