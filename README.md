@@ -37,7 +37,7 @@ require 'laranja'
 Laranja::Base.strf '#'    # 0
 Laranja::Base.strf '*'    # 7
 Laranja::Base.strf '&&&'  # A0u
-``
+```
 
 ### Names
 
