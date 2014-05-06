@@ -20,6 +20,7 @@ laranja:
   name:
     female_first_name: ['Alessandra', 'Aline', 'Bruna', 'Carla', 'Célia', 'Cecília', 'Dalila', 'Eduarda', 'Fabrícia', 'Felícia', 'Isabel', 'Isabela', 'Joana', 'Júlia', 'Janaína', 'Karla', 'Lorena', 'Lorraine', 'Larissa', 'Meire', 'Marcela', 'Margarida', 'Mércia', 'Márcia', 'Marli', 'Morgana', 'Maria', 'Natália', 'Núbia', 'Ofélia', 'Paula', 'Rafaela', 'Roberta', 'Sílvia', 'Suélen', 'Sara', 'Talita', 'Vitória']
     female_title: ['Baronesa', 'Condessa', 'Dra', 'Duquesa', 'Engenheira', 'Imperatriz', 'Princesa', 'Professora']
+    female_suffix: ['Filha']
     last_name: ['Albuquerque', 'Barros', 'Batista', 'Braga', 'Carvalho', 'Costa', 'Cunha', 'Franco', 'Ladislau', 'Macedo', 'Martins', 'Melo', 'Moraes', 'Moreira', 'Nogueira', 'Oliveira', 'Pereira', 'Reis', 'Santos', 'Saraiva', 'Silva', 'Souza', 'Xavier']
     male_title: ['Barão', 'Conde', 'Dom', 'Dr', 'Duque', 'Engenheiro', 'General', 'Imperador', 'Presidente', 'Professor']
     male_first_name: ['Alessandro', 'Alexandre', 'Antônio', 'Breno', 'Carlos', 'César', 'Danilo', 'Deneval', 'Eduardo', 'Esther', 'Elísio', 'Fábio', 'Fabrício', 'Félix', 'Feliciano', 'Frederico', 'Fabiano', 'Gustavo', 'Guilherme', 'Gúbio', 'Heitor', 'Hélio', 'Hugo', 'Ígor', 'João', 'Júlio', 'Kléber', 'Lucas', 'Marcos', 'Marcelo', 'Norberto', 'Paulo', 'Pablo', 'Pedro', 'Raul', 'Rafael', 'Ricardo', 'Roberto', 'Tertuliano', 'Vicente', 'Víctor', 'Yuri', 'Washington']

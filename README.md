@@ -23,6 +23,22 @@ Or install it yourself as:
 
 ## Usage
 
+### Base
+
+| Symbol | Meaning                         |
+|:------:|:-------------------------------:|
+| #      | Random digit between 0 and 9    |
+| *      | Random digit between 1 and 9    |
+| &      | Random number or letter         |
+
+```ruby
+require 'laranja'
+
+Laranja::Base.strf '#'    # 0
+Laranja::Base.strf '*'    # 7
+Laranja::Base.strf '&&&'  # A0u
+``
+
 ### Names
 
 ```ruby

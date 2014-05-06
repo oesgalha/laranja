@@ -37,19 +37,19 @@ module Laranja
     end
 
     def self.secondary
-      strf('%secondary ') + (1 + rand(999)).to_s
+      strf '%secondary *###'
     end
 
     def self.number
-      (1 + rand(999)).to_s
+      strf '*###'
     end
 
     def self.formatted_cep(ufab = nil)
-      cep_builder(true, rand(6) != 0, ufab)
+      ufab.nil? ? strf('#####-###') : uf_code(ufab) + strf('####-###')
     end
 
     def self.cep(ufab = nil)
-      cep_builder(false, rand(6) != 0, ufab)
+      ufab.nil? ? strf('########') : uf_code(ufab) + strf('#######')
     end
 
     def self.uf
@@ -62,15 +62,8 @@ module Laranja
 
     private
 
-    def self.cep_builder(formatted, suffix = true, ufab = nil)
-      c = unufy(ufab, 'U####')
-      c += '-' if formatted
-      c += suffix ? '###' : '000'
-      c.gsub(/#/) { rand(10).to_s }
-    end
-
-    def self.unufy(ufab, str)
-      str.sub(/U/, ufab.nil? ? '#' : data('codigo_cep')[ufab.to_s.downcase].to_s)
+    def self.uf_code(ufab)
+      data('codigo_cep')[ufab.to_s.downcase].to_s
     end
 
   end

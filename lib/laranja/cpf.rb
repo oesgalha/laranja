@@ -2,12 +2,12 @@ module Laranja
   class CPF < Base
 
     def self.cpf(uf = nil)
-      cpf = '########U'.sub(/U/, uf.nil? ? '#' : uf_code(uf)).gsub(/#/) { rand(10).to_s }
+      cpf = uf.nil? ? strf('#########') : strf('########') + uf_code(uf)
       v = [(0..8).inject(0) { |sum, i| sum + cpf[i].to_i * (10 - i) } % 11]
       v[0] = v[0] < 2 ? 0 : 11 - v[0]
       v[1] = ((0..8).inject(0) { |sum, i| sum + cpf[i].to_i * (11 - i) } + v[0] * 2) % 11
       v[1] = v[1] < 2 ? 0 : 11 - v[1]
-      cpf += v.join
+      cpf + v.join
     end
 
     def self.formatted(uf = nil)
