@@ -40,7 +40,7 @@ module Laranja
 end
 
 require 'laranja/address'
-require 'laranja/cpf'
+require 'laranja/document'
 require 'laranja/gender'
 require 'laranja/internet'
 require 'laranja/name'
