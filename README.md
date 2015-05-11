@@ -64,7 +64,7 @@ Laranja::Name.strf '%title %female_first_name %last_name' # Condessa Ofélia Mac
 ```ruby
 require 'laranja'
 
-Laranja::CPF                    # 23379020648
+Laranja::CPF.cpf()              # 23379020648
 
 Laranja::CPF.formatted          # 524.966.867-49
 
