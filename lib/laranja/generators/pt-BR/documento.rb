@@ -26,11 +26,15 @@ module Laranja
       end
 
       def verification_digits(cpf)
-        v = [(0..8).inject(0) { |sum, i| sum + cpf[i].to_i * (10 - i) } % 11]
-        v[0] = v[0] < 2 ? 0 : 11 - v[0]
-        v[1] = ((0..8).inject(0) { |sum, i| sum + cpf[i].to_i * (11 - i) } + v[0] * 2) % 11
-        v[1] = v[1] < 2 ? 0 : 11 - v[1]
-        v
+        v1, v2 = 0, 0
+        v1 = (0..8).reduce(0) { |sum, i| sum + cpf[i].to_i * (10 - i) }
+        v2 = (0..8).reduce(0) { |sum, i| sum + cpf[i].to_i * (11 - i) }
+        v1 %= 11
+        v1 = v1 < 2 ? 0 : 11 - v1
+        v2 += v1 * 2
+        v2 %= 11
+        v2 = v2 < 2 ? 0 : 11 - v2
+        [v1, v2]
       end
     end
   end
