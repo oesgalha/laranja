@@ -35,7 +35,12 @@ Laranja.load('pt-BR') # If no locale is passed, will try to use I18n.locale
 
 Now you can use your locale specific generators.
 
-### Available Generators
+### Available Locales
 
-[pt-BR](https://github.com/oesgalha/laranja/wiki/pt-BR)
+- [pt-BR](https://github.com/oesgalha/laranja/wiki/pt-BR)
 
+### TODO
+
+- Add a CONTRIBUTING.md
+- Finish stuff in pt-BR
+- Start en?
