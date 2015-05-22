@@ -1,7 +1,5 @@
-require 'coveralls'
-Coveralls.wear!
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
+require 'minitest/autorun'
+require 'minitest/pride'
 require 'laranja'
-
-RSpec.configure do |config|
-  config.order = 'random'
-end
