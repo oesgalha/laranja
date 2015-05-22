@@ -37,7 +37,7 @@ Now you can use your locale specific generators.
 
 ### Available Locales
 
-- [pt-BR](https://github.com/oesgalha/laranja/wiki/pt-BR)
+- [pt-BR](https://github.com/oesgalha/laranja/tree/master/docs/pt-BR)
 
 ### TODO
 
