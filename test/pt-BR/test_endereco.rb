@@ -77,4 +77,11 @@ class TestEndereco < MiniTest::Test
     assert_kind_of String, complemento
     refute_empty complemento
   end
+
+  def test_numero
+    numero = Laranja::Endereco.numero
+
+    assert_kind_of String, numero
+    assert_match /\d+/, numero
+  end
 end
