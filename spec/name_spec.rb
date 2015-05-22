@@ -1,66 +1,58 @@
 require 'spec_helper'
 
-shared_examples 'a name generator' do |name|
-  describe 'and' do
-    it 'returns a string' do
-      expect(name).to be_a_kind_of(String)
-    end
-
-    it 'returns a string with only one word' do
-      expect(name.split.size).to eq(1)
-    end
-  end
-end
-
 describe Laranja::Name do
-  describe '#name' do
 
-    let(:n) { 1 + rand(3) }
+  subject { Laranja::Name }
 
-    it 'returns a string' do
-      expect(Laranja::Name.name).to be_a_kind_of(String)
-      expect(Laranja::Name.name(2)).to be_a_kind_of(String)
-    end
-
-    it 'returns a first name and a last name' do
-      expect(Laranja::Name.name.split.size).to be_between(2, 3)
-    end
-
-    it 'returns N last names when specified' do
-      expect(Laranja::Name.name(n).split.size).to be_between(n + 1, n + 2)
-    end
+  it '#name' do
+    subject.must_respond_to :name
+    name = subject.name
+    name.must_be_kind_of String
+    name.split.size.must_be :>=, 2
+    name.split.size.must_be :<=, 3
   end
 
-  describe '#first_name' do
-    it_behaves_like 'a name generator', Laranja::Name.first_name
+  it '#name(n)' do
+    n = 1 + rand(3)
+    name = subject.name(n)
+    name.must_be_kind_of String
+    name.split.size.must_be :>=, n + 1
+    name.split.size.must_be :<=, n + 2
   end
 
-  describe '#last_name' do
-    it_behaves_like 'a name generator', Laranja::Name.last_name
+  it '#first_name' do
+    subject.must_respond_to :first_name
+    fname = subject.first_name
+    fname.must_be_kind_of String
+    fname.split.size.must_equal 1
   end
 
-  describe '#strf' do
+  it '#last_name' do
+    subject.must_respond_to :last_name
+    lname = subject.last_name
+    lname.must_be_kind_of String
+    lname.split.size.must_equal 1
+  end
 
-    let(:n) { 1 + rand(3) }
+  it '#strf' do
+    subject.must_respond_to :strf
 
-    it_behaves_like 'a name generator', Laranja::Name.strf('%female_first_name')
-    it_behaves_like 'a name generator', Laranja::Name.strf('%male_first_name')
-    it_behaves_like 'a name generator', Laranja::Name.strf('%last_name')
-    it_behaves_like 'a name generator', Laranja::Name.strf('%male_suffix')
-    it_behaves_like 'a name generator', Laranja::Name.strf('%female_title')
-    it_behaves_like 'a name generator', Laranja::Name.strf('%male_title')
-
-    it 'returns N last names when specified' do
-      expect(Laranja::Name.strf("%male_first_name#{ ' %last_name' * n }").split.size).to eq(n + 1)
-      expect(Laranja::Name.strf("%female_first_name#{ ' %last_name' * n }").split.size).to eq(n + 1)
+    [
+      '%female_first_name',
+      '%male_first_name',
+      '%last_name',
+      '%male_suffix',
+      '%female_title',
+      '%male_title',
+    ].each do |formatter|
+      subject.strf(formatter).must_be_kind_of String
+      subject.strf(formatter).split.size.must_equal 1
     end
 
-    it 'returns N last names plus suffix when specified' do
-      expect(Laranja::Name.strf("%male_first_name#{ ' %last_name' * n } %male_suffix").split.size).to eq(n + 2)
-    end
+    subject.strf('%male_first_name %last_name %last_name').split.size.must_equal 3
+    subject.strf('%female_first_name %last_name %last_name').split.size.must_equal 3
 
-    it 'returns a title when specified' do
-      expect(Laranja::Name.strf("%female_title %female_first_name#{ ' %last_name' * n }").split.size).to eq(n + 2)
-    end
+    subject.strf('%male_first_name %last_name %male_suffix').split.size.must_equal 3
+    subject.strf('%female_title %female_first_name %last_name %last_name').split.size.must_equal 4
   end
 end
