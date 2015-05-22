@@ -1,8 +1,8 @@
 require 'bundler/gem_tasks'
 
-task :spec do
-  $LOAD_PATH.unshift('lib', 'spec')
-  Dir.glob('./spec/**/*_spec.rb') { |f| require f }
+task :test do
+  $LOAD_PATH.unshift('lib', 'test')
+  Dir.glob('./test/**/test_*.rb') { |f| require f }
 end
 
-task default: :spec
+task default: :test

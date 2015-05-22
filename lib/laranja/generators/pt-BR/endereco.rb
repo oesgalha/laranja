@@ -3,36 +3,36 @@ module Laranja
     class << self
       def cidade
         strf [
-          '%city_prefix :name%last_name',
-          '%city_prefix :name%last_name %city_suffix',
-          '%city_prefix %female_city_prefix :name%female_first_name',
-          '%city_prefix %male_city_prefix :name%male_first_name',
-          '%city_prefix %female_city_prefix :name%female_first_name %city_suffix',
-          '%city_prefix %male_city_prefix :name%male_first_name %city_suffix',
-          ':name%last_name %city_suffix',
-          '%female_city_prefix :name%female_first_name',
-          '%male_city_prefix :name%male_first_name',
-          '%female_city_prefix :name%female_first_name %city_suffix',
-          '%male_city_prefix :name%male_first_name %city_suffix'
+          '%city_prefix :nome%last_name',
+          '%city_prefix :nome%last_name %city_suffix',
+          '%city_prefix %female_city_prefix :nome%female_first_name',
+          '%city_prefix %male_city_prefix :nome%male_first_name',
+          '%city_prefix %female_city_prefix :nome%female_first_name %city_suffix',
+          '%city_prefix %male_city_prefix :nome%male_first_name %city_suffix',
+          ':nome%last_name %city_suffix',
+          '%female_city_prefix :nome%female_first_name',
+          '%male_city_prefix :nome%male_first_name',
+          '%female_city_prefix :nome%female_first_name %city_suffix',
+          '%male_city_prefix :nome%male_first_name %city_suffix'
         ].sample
       end
 
       def bairro
         strf [
-          '%district_prefix :name%last_name',
-          '%district_prefix :name%male_title :name%last_name',
-          '%district_prefix :name%female_title :name%last_name'
+          '%district_prefix :nome%last_name',
+          '%district_prefix :nome%male_title :nome%last_name',
+          '%district_prefix :nome%female_title :nome%last_name'
         ].sample
       end
 
       def rua
         strf [
-          '%log_prefix :name%female_title :name%female_first_name :name%last_name',
-          '%log_prefix :name%female_first_name :name%last_name',
-          '%log_prefix :name%male_title :name%male_first_name :name%last_name :name%male_suffix',
-          '%log_prefix :name%male_title :name%male_first_name :name%last_name',
-          '%log_prefix :name%male_first_name :name%last_name :name%male_suffix',
-          '%log_prefix :name%male_first_name :name%last_name'
+          '%log_prefix :nome%female_title :nome%female_first_name :nome%last_name',
+          '%log_prefix :nome%female_first_name :nome%last_name',
+          '%log_prefix :nome%male_title :nome%male_first_name :nome%last_name :nome%male_suffix',
+          '%log_prefix :nome%male_title :nome%male_first_name :nome%last_name',
+          '%log_prefix :nome%male_first_name :nome%last_name :nome%male_suffix',
+          '%log_prefix :nome%male_first_name :nome%last_name'
         ].sample
       end
 
