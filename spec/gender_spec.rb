@@ -1,23 +1,20 @@
 require 'spec_helper'
 
 describe Laranja::Gender do
-  describe '#gender' do
-    it 'returns a string' do
-      expect(Laranja::Gender.gender).to be_a_kind_of(String)
-    end
 
-    it 'returns a non empty string' do
-      expect(Laranja::Gender.gender).not_to be_empty
-    end
+  subject { Laranja::Gender }
+
+  it '#gender' do
+    subject.must_respond_to :gender
+    gender = subject.gender
+    gender.must_be_kind_of String
+    gender.wont_be_empty
   end
 
-  describe '#abbr' do
-    it 'returns a string' do
-      expect(Laranja::Gender.abbr).to be_a_kind_of(String)
-    end
-
-    it 'returns an 1 character string' do
-      expect(Laranja::Gender.abbr.size).to eq(1)
-    end
+  it '#abbr' do
+    subject.must_respond_to :abbr
+    abbr = subject.abbr
+    abbr.must_be_kind_of String
+    abbr.size.must_equal 1
   end
 end

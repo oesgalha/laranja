@@ -1,89 +1,85 @@
 require 'spec_helper'
 
-shared_examples 'non empty string generator' do |str|
-  describe 'and' do
-    it 'return a string' do
-      expect(str).to be_a_kind_of(String)
-    end
-
-    it 'returns a non empty string' do
-      expect(str).not_to be_empty
-    end
-  end
-end
-
 describe Laranja::Address do
-  describe '#uf' do
-    it_behaves_like 'non empty string generator', Laranja::Address.uf
+
+  subject { Laranja::Address }
+
+  it '#uf' do
+    subject.must_respond_to :uf
+    uf = subject.uf
+    uf.must_be_kind_of String
+    uf.wont_be_empty
   end
 
-  describe '#uf_abbr' do
-    it_behaves_like 'non empty string generator', Laranja::Address.uf_abbr
-    it 'returns a 2 characters string' do
-      expect(Laranja::Address.uf_abbr.size).to eq(2)
-    end
+  it '#uf_abbr' do
+    subject.must_respond_to :uf_abbr
+    uf_short = subject.uf_abbr
+    uf_short.must_be_kind_of String
+    uf_short.size.must_equal 2
   end
 
-  describe '#formatted_cep' do
-    it_behaves_like 'non empty string generator', Laranja::Address.formatted_cep
-
-    it 'returns an 8 characters string' do
-      expect(Laranja::Address.formatted_cep.size).to eq(9)
-    end
-
-    it 'returns a number only string' do
-      expect(Laranja::Address.formatted_cep).to match(/\d{5}-\d{3}/)
-    end
-
-    it 'has the UF digit if an UF is specified' do
-      expect(Laranja::Address.formatted_cep(:ce)[0].to_i).to eq(6)
-      expect(Laranja::Address.formatted_cep(:BA)[0].to_i).to eq(4)
-      expect(Laranja::Address.formatted_cep('rj')[0].to_i).to eq(2)
-      expect(Laranja::Address.formatted_cep('RS')[0].to_i).to eq(9)
-      expect(Laranja::Address.formatted_cep(:sp)[0].to_i).to eq(1)
-    end
+  it '#formatted_cep' do
+    subject.must_respond_to :formatted_cep
+    cep = subject.formatted_cep
+    cep.must_be_kind_of String
+    cep.size.must_equal 9
+    cep.must_match /\d{5}-\d{3}/
   end
 
-  describe '#cep' do
-    it_behaves_like 'non empty string generator', Laranja::Address.cep
-
-    it 'returns an 8 characters string' do
-      expect(Laranja::Address.cep.size).to eq(8)
-    end
-
-    it 'returns a number only string' do
-      expect(Laranja::Address.cep).to match(/\d{8}/)
-    end
-
-    it 'has the UF digit if an UF is specified' do
-      expect(Laranja::Address.cep(:ce)[0].to_i).to eq(6)
-      expect(Laranja::Address.cep(:BA)[0].to_i).to eq(4)
-      expect(Laranja::Address.cep('rj')[0].to_i).to eq(2)
-      expect(Laranja::Address.cep('RS')[0].to_i).to eq(9)
-      expect(Laranja::Address.cep(:sp)[0].to_i).to eq(1)
-    end
+  it '#formatted_cep(uf)' do
+    subject.formatted_cep(:ce)[0].must_equal '6'
+    subject.formatted_cep(:BA)[0].must_equal '4'
+    subject.formatted_cep('rj')[0].must_equal '2'
+    subject.formatted_cep('RS')[0].must_equal '9'
   end
 
-  describe '#city' do
-    it_behaves_like 'non empty string generator', Laranja::Address.city
+  it '#cep' do
+    subject.must_respond_to :cep
+    cep = subject.cep
+    cep.must_be_kind_of String
+    cep.size.must_equal 8
+    cep.must_match /\d{8}/
   end
 
-  describe '#street' do
-    it_behaves_like 'non empty string generator', Laranja::Address.street
+  it '#cep(uf)' do
+    subject.cep(:ce)[0].must_equal '6'
+    subject.cep(:BA)[0].must_equal '4'
+    subject.cep('rj')[0].must_equal '2'
+    subject.cep('RS')[0].must_equal '9'
   end
 
-  describe '#district' do
-    it_behaves_like 'non empty string generator', Laranja::Address.district
+  it '#city' do
+    subject.must_respond_to :city
+    city = subject.city
+    city.must_be_kind_of String
+    city.wont_be_empty
   end
 
-  describe '#secondary' do
-    it_behaves_like 'non empty string generator', Laranja::Address.secondary
+  it '#street' do
+    subject.must_respond_to :street
+    street = subject.street
+    street.must_be_kind_of String
+    street.wont_be_empty
   end
 
-  describe '#number' do
-    it_behaves_like 'non empty string generator', Laranja::Address.number
-    it 'returns a number only string' do
-      expect(Laranja::Address.number).to match(/\d+/)
-    end
+  it '#district' do
+    subject.must_respond_to :district
+    district = subject.district
+    district.must_be_kind_of String
+    district.wont_be_empty
+  end
+
+  it '#secondary' do
+    subject.must_respond_to :secondary
+    secondary = subject.secondary
+    secondary.must_be_kind_of String
+    secondary.wont_be_empty
+  end
+
+  it '#number' do
+    subject.must_respond_to :number
+    number = subject.number
+    number.must_be_kind_of String
+    number.must_match /\d+/
   end
 end
