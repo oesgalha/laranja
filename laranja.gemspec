@@ -7,9 +7,14 @@ Gem::Specification.new do |spec|
   spec.name          = 'laranja'
   spec.version       = Laranja::VERSION
   spec.authors       = ['Oscar Esgalha']
-  spec.email         = ['oscaresgalha@gmail.com\n']
-  spec.description   = %q{Grab some valid brazilian fake data. For testing.}
-  spec.summary       = %q{Laranja will generate valid brazilian fake data, which can be used for automated testing or populating development databases.}
+  spec.email         = ['oscaresgalha@gmail.com']
+  spec.description       = <<DESC
+Laranja is a ruby gem which generates random fake valid data.
+It was built to help testing brazilian apps, since it generated specific data from the country.
+Now it's localized with the I18n gem, the gem has custom data and custom generators per locale.
+You can use it in your automated tests or to populate development databases.
+DESC
+  spec.summary       = %q{Laranja is a ruby gem which generates random fake valid data.}
   spec.homepage      = 'https://github.com/oesgalha/laranja'
   spec.license       = 'MIT'
 
