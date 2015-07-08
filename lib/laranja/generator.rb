@@ -3,15 +3,14 @@ module Laranja
     class << self
       attr_writer :static_data
 
-      NUMBERS = '0'.upto('9').to_a
-      UPPER = 'A'.upto('Z').to_a
-      LOWER = 'a'.upto('z').to_a
+      NUMBERS = '0'.upto('9').to_a.freeze
+      ALL = (NUMBERS + 'A'.upto('Z').to_a + 'a'.upto('z').to_a).freeze
 
       protected
 
       def strf(format)
         symbolize(format).gsub(/(:(?<scope>[^:\s\z]+))?%(?<key>[^%\s\z]+)/) do
-          data_sample($~[:key], $~[:scope])
+          data($~[:key], $~[:scope]).sample
         end
       end
 
@@ -19,14 +18,10 @@ module Laranja
         format.gsub(/#/) {
           NUMBERS.sample
         }.gsub(/\*/) {
-          (1 + rand(9)).to_s 
-        }.gsub(/&/) { 
-          (LOWER + UPPER + NUMBERS).sample 
+          (1 + rand(9)).to_s
+        }.gsub(/&/) {
+          (ALL).sample
         }
-      end
-
-      def data_sample(key, scope = nil)
-        data(key, scope).sample
       end
 
       def data(key, scope = nil)
