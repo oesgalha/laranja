@@ -2,11 +2,11 @@ module Laranja
   class Sexo < Generator
     class << self
       def sexo
-        strf '%name'
+        strf('%name')
       end
 
       def sigla
-        strf '%abbr'
+        strf('%abbr')
       end
     end
   end
