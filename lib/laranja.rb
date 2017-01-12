@@ -1,5 +1,4 @@
-require 'safe_yaml'
-SafeYAML::OPTIONS[:default_mode] = :safe
+require 'yaml'
 require 'laranja/version'
 
 module Laranja
