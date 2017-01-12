@@ -1,11 +1,8 @@
 language: ruby
-os:
-  - linux
-  - osx
 rvm:
-  - 2.2.2
-  - 2.1.6
-  - 2.0.0
-  - 1.9.3
+  - 2.4.0
+  - 2.3.3
+  - 2.2.6
+  - 2.1.10
 env:
   secure: 0Mi2GePEotGmVDxATHkTY5NN7vfgexgW8Fz+16hbcbbNockNsjaU64HQeZ5FWwaKAUBDrYCQf0hooO8kD7XcuwSVEYg+T1M1glhg3wSwMRsZUgyow4AWeCCJ2cqnYiSh1R/1nO8M91cp7TbcLdK/r65x3BFLTd++x82BYWYJgeA=
